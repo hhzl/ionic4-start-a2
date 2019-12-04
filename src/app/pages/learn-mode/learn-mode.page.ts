@@ -17,22 +17,23 @@ export class LearnModePage implements OnInit {
   i : any;
 
 
-  word: string = 'fish'; 
-  translate : string = 'der Fisch';
+  word: string; 
+  translate : string;
   numberOfItemsInDB : 0; 
   itemImageUrlPath: string = 'assets/data/pictures/';
-  itemImageFileName : string = 'fish.jpg'; 
-  itemAudioFileName : string = 'En-uk-fish.ogg.mp3';
+  itemImageFileName : string ; 
+  itemAudioFileName : string ;
 
-  constructor() { }
-
-  ngOnInit() {
-      this.dbObject = JSON.parse(localStorage.getItem(this.storageKey));
+  constructor() { 
+   this.dbObject = JSON.parse(localStorage.getItem(this.storageKey));
       this.i = JSON.parse(localStorage.getItem(this.storageKeyOfIndex));
       // initialisation from this.dbObject.items[this.i]
       this.numberOfItemsInDB = this.dbObject.items.length; 
       this.setItem(this.i);
+}
 
+  ngOnInit() {
+   
   }
 
 

@@ -74,7 +74,7 @@ export class AppComponent {
    {
       "_id":35,
       "word":"sheep",
-      "translate":"das Schaf",
+      "translate":"das Schaf", 
       "tags":"animal",
       "picture":"sheep.jpg",
       "audio":"En-uk-a_sheep.ogg.mp3"
@@ -82,8 +82,10 @@ export class AppComponent {
 ]};
 
 
-    localStorage.setItem('ionic4-start-a2-data',JSON.stringify(dbObject));
-    localStorage.setItem('ionic4-start-a2-indexOfSelectedItem','0');
+   localStorage.setItem('ionic4-start-a2-data',JSON.stringify(dbObject));
+ 
+   if (!localStorage.getItem('ionic4-start-a2-indexOfSelectedItem')) {
+   localStorage.setItem('ionic4-start-a2-indexOfSelectedItem','0');}
 
 
   }
